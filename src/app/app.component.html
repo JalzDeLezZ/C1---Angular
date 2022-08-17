@@ -1,3 +1,16 @@
+
+<h2>{{vObj.x}}</h2>
+<input type="text" [(ngModel)]="vObj.x" required #nameInput="ngModel">
+<p>Valid: {{nameInput.valid}}</p>
+___________________________________
+
+<h2>Age: {{vObj.y}}</h2>
+<input type="number" [(ngModel)]="vObj.y" required max="18" min="10" #ageInput="ngModel">
+<p>Valid: {{ageInput.valid}}</p>
+
+<hr/>
+<br/>
+
 <h1>Properties</h1>
 
 <button [disabled]="btnDisable">Disable</button>

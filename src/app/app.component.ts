@@ -16,7 +16,9 @@ export class AppComponent {
     a: "one",
     b: 2,
     c: true,
-    d: "https://th.bing.com/th/id/OIF.F9s3onLV0ck6cce3Z3ypHg?pid=ImgDet&rs=1"
+    d: "https://th.bing.com/th/id/OIF.F9s3onLV0ck6cce3Z3ypHg?pid=ImgDet&rs=1",
+    x: "",
+    y: 10,
   }
 
   toogleButton() {
