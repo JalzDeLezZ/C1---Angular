@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'my-store';
@@ -27,6 +27,21 @@ export class AppComponent {
     this.vObj= {
       ...this.vObj,
       b: this.vObj.b + 1
+    }
+  }
+
+  onScroll(event : Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+
+  changeName= (e : Event) => {
+    const element = e.target as HTMLInputElement;
+    console.log(element.value);
+
+    this.vObj = {
+      ...this.vObj,
+      a: element.value
     }
   }
 }

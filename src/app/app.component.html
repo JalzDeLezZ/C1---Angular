@@ -26,6 +26,18 @@
 
 <hr/>
 <br/>
+  <div class="box" (scroll)="onScroll($event)">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptatum expedita illo perferendis, harum enim veniam. A aperiam quod fuga aspernatur est deserunt, ex dolorum neque qui beatae, numquam architecto, aliquid soluta excepturi itaque inventore. Ab error possimus enim sunt consectetur dolorem sint, necessitatibus quidem quas. Cumque iusto veritatis error. Obcaecati qui eum consequuntur perferendis nam laboriosam aliquam expedita animi vel unde optio rem asperiores explicabo corrupti vero, non molestiae eos, nemo fugit maxime veritatis hic distinctio quam? Nemo, at dignissimos alias necessitatibus illo praesentium similique distinctio recusandae molestiae id debitis ipsum asperiores nesciunt corrupti quia qui, error velit suscipit? Asperiores sit eveniet voluptas veniam minus ut dolore. Adipisci, iusto exercitationem quo veniam sapiente possimus illo saepe, eos reprehenderit explicabo quibusdam assumenda dolorem molestias corporis culpa tenetur reiciendis. Odit dolor deleniti quos quam necessitatibus debitis ipsam culpa, neque facere praesentium? Non aut perferendis consequatur facere vero eius sunt placeat cum alias saepe voluptatum harum expedita quasi aspernatur reprehenderit quod dicta ea quia, consectetur a quibusdam! Quibusdam quis nisi animi magni exercitationem harum inventore doloremque libero dolor corporis alias culpa error odit nihil ea sequi, ipsam distinctio quisquam velit at iure vitae hic. Tempora odio provident vel rem qui quia fugiat.</p>
+  </div>
+
+<hr/>
+<br/>
+
+<h2>{{vObj.a}}</h2>
+<input type="text" [value]="vObj.a" (keyup)="changeName($event)">
+
+<hr/>
+<br/>
 <h1>Hello World</h1>
 <h2>{{"Hello World".repeat(5)}}</h2>
 
