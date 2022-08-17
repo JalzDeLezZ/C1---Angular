@@ -1,61 +1,124 @@
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="aNewName" />
+<button (click)="addName()">Add Name</button>
 
-<h2>{{vObj.x}}</h2>
-<input type="text" [(ngModel)]="vObj.x" required #nameInput="ngModel">
-<p>Valid: {{nameInput.valid}}</p>
+<ul>
+  <li *ngIf="aEmojis.length === 0">No Hay Nombres</li>
+  <li *ngFor="let pI of aEmojis; index as i">
+    {{i}} → {{pI}}
+    <button (click)="mDeleteElement(i)">Delete</button>
+  </li>
+</ul>
+<br>
+<div class="Models">
+  <div *ngFor="let pI of aProducts">
+    <img [src]="pI.image" width="169" alt="image">
+    <h2>{{pI.price}}</h2>
+    <p>{{pI.name}}</p>
+  </div>
+</div>
+<hr />
+<br />
+
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="name" />
+<p *ngIf="name === 'james'">I'm First</p>
+<p *ngIf="name === 'jalz' && vObj.y > 15 else negationX">I'm Second</p>
+<ng-template #negationX>
+  <!-- <p *ngIf="name !== 'jalz'">I'm Third</p> -->
+  <p>I'm Third</p>
+</ng-template>
+
+<hr />
+<br />
+
+<h1>*ngModel</h1>
+<h2>{{ vObj.x }}</h2>
+<input type="text" [(ngModel)]="vObj.x" required #nameInput="ngModel" />
+<p>Valid: {{ nameInput.valid }}</p>
 ___________________________________
 
-<h2>Age: {{vObj.y}}</h2>
-<input type="number" [(ngModel)]="vObj.y" required max="18" min="10" #ageInput="ngModel">
-<p>Valid: {{ageInput.valid}}</p>
+<h2>Age: {{ vObj.y }}</h2>
+<input
+  type="number"
+  [(ngModel)]="vObj.y"
+  required
+  max="18"
+  min="10"
+  #ageInput="ngModel"
+/>
+<p>Valid: {{ ageInput.valid }}</p>
 
-<hr/>
-<br/>
+<hr />
+<br />
 
 <h1>Properties</h1>
 
 <button [disabled]="btnDisable">Disable</button>
-<input type="text" [value]="name"/>
+<input type="text" [value]="name" />
 
 <progress max="100" [value]="age"></progress>
 
-<img width="100" [src]="img"/>
-<br/>
+<img width="100" [src]="img" />
+<br />
 
 <button (click)="toogleButton()">Toogle Button</button>
 
 <p>
-  {{vObj.a}}
-  {{vObj.b}}
-  {{vObj.c}}
-  {{vObj.d}}
+  {{ vObj.a }}
+  {{ vObj.b }}
+  {{ vObj.c }}
+  {{ vObj.d }}
 </p>
 
-<hr/>
-<br/>
+<hr />
+<br />
 
-<h3>Age {{vObj.b}}</h3>
+<h3>Age {{ vObj.b }}</h3>
 <button (click)="mIncreaseAge()">Add +1</button>
 
+<hr />
+<br />
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptatum
+    expedita illo perferendis, harum enim veniam. A aperiam quod fuga aspernatur
+    est deserunt, ex dolorum neque qui beatae, numquam architecto, aliquid
+    soluta excepturi itaque inventore. Ab error possimus enim sunt consectetur
+    dolorem sint, necessitatibus quidem quas. Cumque iusto veritatis error.
+    Obcaecati qui eum consequuntur perferendis nam laboriosam aliquam expedita
+    animi vel unde optio rem asperiores explicabo corrupti vero, non molestiae
+    eos, nemo fugit maxime veritatis hic distinctio quam? Nemo, at dignissimos
+    alias necessitatibus illo praesentium similique distinctio recusandae
+    molestiae id debitis ipsum asperiores nesciunt corrupti quia qui, error
+    velit suscipit? Asperiores sit eveniet voluptas veniam minus ut dolore.
+    Adipisci, iusto exercitationem quo veniam sapiente possimus illo saepe, eos
+    reprehenderit explicabo quibusdam assumenda dolorem molestias corporis culpa
+    tenetur reiciendis. Odit dolor deleniti quos quam necessitatibus debitis
+    ipsam culpa, neque facere praesentium? Non aut perferendis consequatur
+    facere vero eius sunt placeat cum alias saepe voluptatum harum expedita
+    quasi aspernatur reprehenderit quod dicta ea quia, consectetur a quibusdam!
+    Quibusdam quis nisi animi magni exercitationem harum inventore doloremque
+    libero dolor corporis alias culpa error odit nihil ea sequi, ipsam
+    distinctio quisquam velit at iure vitae hic. Tempora odio provident vel rem
+    qui quia fugiat.
+  </p>
+</div>
 
-<hr/>
-<br/>
-  <div class="box" (scroll)="onScroll($event)">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptatum expedita illo perferendis, harum enim veniam. A aperiam quod fuga aspernatur est deserunt, ex dolorum neque qui beatae, numquam architecto, aliquid soluta excepturi itaque inventore. Ab error possimus enim sunt consectetur dolorem sint, necessitatibus quidem quas. Cumque iusto veritatis error. Obcaecati qui eum consequuntur perferendis nam laboriosam aliquam expedita animi vel unde optio rem asperiores explicabo corrupti vero, non molestiae eos, nemo fugit maxime veritatis hic distinctio quam? Nemo, at dignissimos alias necessitatibus illo praesentium similique distinctio recusandae molestiae id debitis ipsum asperiores nesciunt corrupti quia qui, error velit suscipit? Asperiores sit eveniet voluptas veniam minus ut dolore. Adipisci, iusto exercitationem quo veniam sapiente possimus illo saepe, eos reprehenderit explicabo quibusdam assumenda dolorem molestias corporis culpa tenetur reiciendis. Odit dolor deleniti quos quam necessitatibus debitis ipsam culpa, neque facere praesentium? Non aut perferendis consequatur facere vero eius sunt placeat cum alias saepe voluptatum harum expedita quasi aspernatur reprehenderit quod dicta ea quia, consectetur a quibusdam! Quibusdam quis nisi animi magni exercitationem harum inventore doloremque libero dolor corporis alias culpa error odit nihil ea sequi, ipsam distinctio quisquam velit at iure vitae hic. Tempora odio provident vel rem qui quia fugiat.</p>
-  </div>
+<hr />
+<br />
 
-<hr/>
-<br/>
+<h2>{{ vObj.a }}</h2>
+<input type="text" [value]="vObj.a" (keyup)="changeName($event)" />
 
-<h2>{{vObj.a}}</h2>
-<input type="text" [value]="vObj.a" (keyup)="changeName($event)">
-
-<hr/>
-<br/>
+<hr />
+<br />
 <h1>Hello World</h1>
-<h2>{{"Hello World".repeat(5)}}</h2>
+<h2>{{ "Hello World".repeat(5) }}</h2>
 
-<p>3+3 = {{3+3}}</p>
+<p>3+3 = {{ 3 + 3 }}</p>
 
-<h4>{{name}} y tengo {{age}}</h4>
+<h4>{{ name }} y tengo {{ age }}</h4>
 
-<img src={{img}} alt="IMAGE">
+<img src="{{ img }}" alt="IMAGE" />
