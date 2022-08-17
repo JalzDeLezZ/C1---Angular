@@ -8,12 +8,21 @@
 <img width="100" [src]="img"/>
 <br/>
 
+<button (click)="toogleButton()">Toogle Button</button>
+
 <p>
   {{vObj.a}}
   {{vObj.b}}
   {{vObj.c}}
   {{vObj.d}}
 </p>
+
+<hr/>
+<br/>
+
+<h3>Age {{vObj.b}}</h3>
+<button (click)="mIncreaseAge()">Add +1</button>
+
 
 <hr/>
 <br/>

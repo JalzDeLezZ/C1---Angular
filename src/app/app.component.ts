@@ -18,4 +18,15 @@ export class AppComponent {
     c: true,
     d: "https://th.bing.com/th/id/OIF.F9s3onLV0ck6cce3Z3ypHg?pid=ImgDet&rs=1"
   }
+
+  toogleButton() {
+    this.btnDisable = !this.btnDisable;
+  }
+
+  mIncreaseAge(){
+    this.vObj= {
+      ...this.vObj,
+      b: this.vObj.b + 1
+    }
+  }
 }
