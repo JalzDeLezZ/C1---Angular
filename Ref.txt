@@ -1,3 +1,7 @@
+ =================== 14 ===================
+https://stackblitz.com/
+
+
  506  npm i -g @angular/cli
   508  ng version
   509  ng new my-store
