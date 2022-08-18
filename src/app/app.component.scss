@@ -33,6 +33,17 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+.line-error{
+  height: 0;
+  border-bottom: 1px solid;
+  &.invalid {
+    border-color: red;
+  }
+  &.valid_xyz {
+    border-color: green;
+  }
+}
 @media screen and (min-width: 40em) {
 
   .models--grid {
