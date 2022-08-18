@@ -1,6 +1,6 @@
 export interface IProduct {
   name: string;
-  price: number;
+  rank: number;
   image: string;
   category?: string;
 }

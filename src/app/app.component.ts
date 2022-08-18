@@ -8,6 +8,12 @@ import { IProduct } from './product.model';
 })
 export class AppComponent {
 
+  register = {
+    name: '',
+    email: '',
+    password: '',
+  }
+
   widthImg = 100;
   box= {
     width: 100,
@@ -15,7 +21,7 @@ export class AppComponent {
     background: 'red',
   }
 
-  aProducts : IProduct[] = [ { name: 'EL mejor juguete', price: 565, image: './assets/images/1.jpg', category: 'all', }, { name: 'Bicicleta casi nueva', price: 356, image: './assets/images/2.jpg' }, { name: 'Colleción de albumnes', price: 34, image: './assets/images/3.jpg' }, { name: 'Mis libros', price: 23, image: './assets/images/4.jpg' }, { name: 'Casa para perro', price: 34, image: './assets/images/5.jpg' }, { name: 'Gafas', price: 3434, image: './assets/images/6.jpg' } ]
+  aProducts : IProduct[] = [ { name: 'Model 1', rank: 565, image: './assets/images/1.jpg', category: 'all', }, { name: 'Model 2', rank: 356, image: './assets/images/2.jpg' }, { name: 'Model 3', rank: 34, image: './assets/images/3.jpg' }, { name: 'Model 4', rank: 23, image: './assets/images/4.jpg' }, { name: 'Model 5', rank: 34, image: './assets/images/5.jpg' }, { name: 'Model 6', rank: 3434, image: './assets/images/6.jpg' } ]
   vInvalid : string = 'invalid';
   color: string = 'verde';
 
@@ -26,7 +32,7 @@ export class AppComponent {
   age = 18;
   name = 'Molina';
   btnDisable = true;
-  img = "https://th.bing.com/th/id/OIF.F9s3onLV0ck6cce3Z3ypHg?pid=ImgDet&rs=1"
+  img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWQT140C43jTAHoRp84leGvbHKDlhabHuvg&usqp=CAU"
 
   vObj = {
     a: "one",
@@ -69,5 +75,8 @@ export class AppComponent {
   }
   mDeleteElement(pIndex: number) {
     this.aEmojis.splice(pIndex, 1);
+  }
+
+  onRegister() {
   }
 }

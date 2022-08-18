@@ -1,42 +1,81 @@
+<h1>Forms</h1>
+
+<form (ngSubmit)="onRegister()" action="" #refMyForm="ngForm">
+  <div class="input-group">
+    <label for="iName">Name</label>
+    <input
+      name="n_name"
+      required
+      type="text"
+      id="iName"
+      [(ngModel)]="register.name"
+    />
+    <p>Error Message</p>
+  </div>
+  <div class="input-group">
+    <label for="iEmail">Email</label>
+    <input
+      name="n_email"
+      required
+      type="email"
+      id="iEmail"
+      [(ngModel)]="register.email"
+    />
+    <p>Error Message</p>
+  </div>
+  <div class="input-group">
+    <label for="iPassword">Password</label>
+    <input
+      name="n_password"
+      required
+      type="password"
+      id="iPassword"
+      [(ngModel)]="register.password"
+    />
+    <p>Error Message</p>
+  </div>
+  <button [disabled]="refMyForm.invalid" type="submit">Register</button>
+  <button type="button">Action</button>
+</form>
+
+<hr />
+<br />
 
 <h1>NgClass & NgStyle</h1>
 
 <input type="text" required #ref_four="ngModel" [(ngModel)]="title" />
-<hr class="line-error"
+<hr
+  class="line-error"
   [ngClass]="{
-    'valid_xyz': ref_four.valid,
-    'invalid': ref_four.invalid
+    valid_xyz: ref_four.valid,
+    invalid: ref_four.invalid
   }"
->
+/>
 <p class="message-error" [class.active_xyz]="ref_four.invalid">
   El Campo es Requerido
 </p>
 
 <span>------------------------------------</span>
 
-
 <div class="boxTwo">
   <div>
-    <input type="number" [(ngModel)]="box.width">
-    <input type="number" [(ngModel)]="box.height">
-    <input type="color" [(ngModel)]="box.background">
-
+    <input type="number" [(ngModel)]="box.width" />
+    <input type="number" [(ngModel)]="box.height" />
+    <input type="color" [(ngModel)]="box.background" />
   </div>
   <div>
-    <div [ngStyle]="{
-      'width.px': box.width,
-      'height': box.height + 'px',
-      'background-color': box.background
-    }">
-
-    </div>
-
+    <div
+      [ngStyle]="{
+        'width.px': box.width,
+        height: box.height + 'px',
+        'background-color': box.background
+      }"
+    ></div>
   </div>
 </div>
 
 <hr />
 <br />
-
 
 <h1>Class & Style</h1>
 <input type="text" required #ref_one="ngModel" [(ngModel)]="vInvalid" />
@@ -45,12 +84,12 @@
 </p>
 
 <label for="">Name:</label>
-<input type="text" required #ref_two="ngModel" [(ngModel)]="title">
-<p [style.font-style]="ref_two.invalid ? 'italic' : 'normal'">Text Text Text </p>
+<input type="text" required #ref_two="ngModel" [(ngModel)]="title" />
+<p [style.font-style]="ref_two.invalid ? 'italic' : 'normal'">Text Text Text</p>
 
 <div class="boxOne">
   <div>
-    <input type="number" [(ngModel)]="widthImg">
+    <input type="number" [(ngModel)]="widthImg" />
   </div>
   <div>
     <img [style.width.px]="widthImg" [src]="img" alt="IMAGE" />
@@ -87,7 +126,7 @@
 <div class="models--grid">
   <div *ngFor="let pI of aProducts">
     <img [src]="pI.image" alt="image" />
-    <h2>{{ pI.price }}</h2>
+    <h2>{{ pI.rank }}</h2>
     <p>{{ pI.name }}</p>
   </div>
 </div>
