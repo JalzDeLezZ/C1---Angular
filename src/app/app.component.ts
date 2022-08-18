@@ -8,10 +8,12 @@ import { IProduct } from './product.model';
 })
 export class AppComponent {
 
-  aProducts : IProduct[] = [ { name: 'EL mejor juguete', price: 565, image: './assets/images/1.jpg', category: 'all', }, { name: 'Bicicleta casi nueva', price: 356, image: './assets/images/2.jpg' }, { name: 'Colleción de albumnes', price: 34, image: './assets/images/3.jpg' }, { name: 'Mis libros', price: 23, image: './assets/images/4.jpg' }, { name: 'Casa para perro', price: 34, image: './assets/images/5.jpg' }, { name: 'Gafas', price: 3434, image: './assets/images/6.jpg' } ]
+  widthImg = 100;
 
+  aProducts : IProduct[] = [ { name: 'EL mejor juguete', price: 565, image: './assets/images/1.jpg', category: 'all', }, { name: 'Bicicleta casi nueva', price: 356, image: './assets/images/2.jpg' }, { name: 'Colleción de albumnes', price: 34, image: './assets/images/3.jpg' }, { name: 'Mis libros', price: 23, image: './assets/images/4.jpg' }, { name: 'Casa para perro', price: 34, image: './assets/images/5.jpg' }, { name: 'Gafas', price: 3434, image: './assets/images/6.jpg' } ]
+  vInvalid : string = 'invalid';
   color: string = 'verde';
-  
+
   aEmojis : string[] = [ '😂' ,'🐦', '🐳','🌮', '💚']
   aNewName : string = '';
 

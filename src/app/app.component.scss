@@ -5,10 +5,55 @@
   background-color: aqua;
 }
 
-.Models{
-  display:  flex;
+.Models {
+  display: flex;
   gap: 10px;
   flex-flow: wrap row;
   justify-content: center;
 }
 
+.models--grid {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2,
+    p {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+.boxOne{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (min-width: 40em) {
+
+  .models--grid {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+.message-error {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  opacity: 0;
+  transition: all linear 0.5s;
+  &.active_xyz{
+    opacity: 1;
+  }
+}
+
+/*
+
+*/

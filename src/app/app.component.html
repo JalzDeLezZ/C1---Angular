@@ -1,18 +1,31 @@
+<h1>Class & Style</h1>
+<input type="text" required #ref_one="ngModel" [(ngModel)]="vInvalid" />
+<p class="message-error" [class.active_xyz]="ref_one.invalid">
+  El Campo es Requerido
+</p>
 
-<h1>[ngSwitch] → *ngSwitchCase ...  *ngSwitchDefault</h1>
+<label for="">Name:</label>
+<input type="text" required #ref_two="ngModel" [(ngModel)]="title">
+<p [style.font-style]="ref_two.invalid ? 'italic' : 'normal'">Text Text Text </p>
+
+<div class="boxOne">
+  <div>
+    <input type="number" [(ngModel)]="widthImg">
+  </div>
+  <div>
+    <img [style.width.px]="widthImg" [src]="img" alt="IMAGE" />
+  </div>
+</div>
+
+<hr />
+<br />
+
+<h1>[ngSwitch] → *ngSwitchCase ... *ngSwitchDefault</h1>
 <div [ngSwitch]="color">
-  <p *ngSwitchCase="'azul'">
-      El color el Azul
-  </p>
-  <p *ngSwitchCase="'verde'">
-      El color el Verde
-  </p>
-  <p *ngSwitchCase="'rojo'">
-      El color el Rojo
-  </p>
-  <p *ngSwitchDefault>
-      No hay ningún color
-  </p>
+  <p *ngSwitchCase="'azul'">El color el Azul</p>
+  <p *ngSwitchCase="'verde'">El color el Verde</p>
+  <p *ngSwitchCase="'rojo'">El color el Rojo</p>
+  <p *ngSwitchDefault>No hay ningún color</p>
 </div>
 <input type="text" required [(ngModel)]="color" />
 
@@ -26,16 +39,16 @@
 <ul>
   <li *ngIf="aEmojis.length === 0">No Hay Nombres</li>
   <li *ngFor="let pI of aEmojis; index as i">
-    {{i}} → {{pI}}
+    {{ i }} → {{ pI }}
     <button (click)="mDeleteElement(i)">Delete</button>
   </li>
 </ul>
-<br>
-<div class="Models">
+<br />
+<div class="models--grid">
   <div *ngFor="let pI of aProducts">
-    <img [src]="pI.image" width="169" alt="image">
-    <h2>{{pI.price}}</h2>
-    <p>{{pI.name}}</p>
+    <img [src]="pI.image" alt="image" />
+    <h2>{{ pI.price }}</h2>
+    <p>{{ pI.name }}</p>
   </div>
 </div>
 <hr />
@@ -44,7 +57,7 @@
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="name" />
 <p *ngIf="name === 'james'">I'm First</p>
-<p *ngIf="name === 'jalz' && vObj.y > 15 else negationX">I'm Second</p>
+<p *ngIf="name === 'jalz' && vObj.y > 15; else negationX">I'm Second</p>
 <ng-template #negationX>
   <!-- <p *ngIf="name !== 'jalz'">I'm Third</p> -->
   <p>I'm Third</p>
@@ -80,7 +93,7 @@ ___________________________________
 
 <progress max="100" [value]="age"></progress>
 
-<img width="100" [src]="img" />
+<img [src]="img" width="40%" />
 <br />
 
 <button (click)="toogleButton()">Toogle Button</button>
@@ -142,4 +155,4 @@ ___________________________________
 
 <h4>{{ name }} y tengo {{ age }}</h4>
 
-<img src="{{ img }}" alt="IMAGE" />
+<img width="100" src="{{ img }}" alt="IMAGE" />
